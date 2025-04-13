@@ -26,7 +26,7 @@ mnc = "43"
 ant_bw = "65"
 
 # Generate TXT file when button is clicked
-if st.button("Generate 4G Cell TXT"):
+if st.button("Generate Cell File"):
     header = "SYSTEM\tSITE\tLAT\tLON\tDIR\tCELL_NAME\tCELL_ID\tPCI\tTAC\tARFCN\tMCC\tMNC\tANT_BW"
     row1 = f"{system}\t{site}\t{lat}\t{lon}\t{azi1}\t{cell_name}\t{cell_id}\t{pci}\t{tac}\t{arfcn}\t{mcc}\t{mnc}\t{ant_bw}"
     row2 = f"{system}\t{site}\t{lat}\t{lon}\t{azi2}\t{cell_name2}\t{cell_id}\t{pci}\t{tac}\t{arfcn}\t{mcc}\t{mnc}\t{ant_bw}"
@@ -35,7 +35,7 @@ if st.button("Generate 4G Cell TXT"):
     output_text = header + "\n" + row1 + "\n" + row2 + "\n" + row3
 
     st.download_button(
-        label="Download Cell_file.txt",
+        label="Download Cell file",
         data=output_text,
         file_name="SignalEdges_cell_file.txt",
         mime="text/plain"
